@@ -28,18 +28,21 @@ class Menu(object):
 
 	def criar_botoes(self):
 		for texto in self.lista_opcoes:
-			self.lista_botoes.append(Botao(self.amb, self.screen, self.lista_imgs, self.pos_inicial, texto, self.local_font + "anagram.ttf", self.lista_cores))
+			self.lista_botoes.append(Botao(self.amb, self.screen, self.lista_imgs, self.pos_inicial, texto, self.local_font + "FreeSerif.ttf", self.lista_cores))
 			self.pos_inicial = (self.pos_inicial[0], self.pos_inicial[1] + 225)
 
 	# def para definir ações de cada opção do menu ao ser selecionada
 	def selecionar_opcao(self, campo):
 		if self.comando == "Jogar":
-			print("Bubs")
+			print("Jogar")
+			campo.dict_tela["menu"] = False
+			campo.dict_tela["tela_operacoes"] = True
 
 		elif self.comando == "Instruções":
-			print("Zuck")
+			print("Instruções: Use o rato e sua mente!")
 
 		elif self.comando == "Sair":
+			print("Sair")
 			campo.rodando = False
 
 	def tratar_eventos(self, campo, clique):

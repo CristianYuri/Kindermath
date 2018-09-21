@@ -11,8 +11,7 @@ class TelaOperacoes(object):
 
 	lista_opcoes = ["Adição",
 	                "Subtração",
-	                "Multiplicação", 
-	                "Divisão"] 
+	                "Multiplicação"] 
 
 	lista_botoes = []  # Rever se usará lista ou dicionário
 
@@ -29,19 +28,19 @@ class TelaOperacoes(object):
 
 	def criar_botoes(self):
 		for texto in self.lista_opcoes:
-			self.lista_botoes.append(Botao(self.amb, self.screen, self.lista_imgs, self.pos_inicial, texto, self.local_font + "anagram.ttf", self.lista_cores))
-			self.pos_inicial = (self.pos_inicial[0] + 100, self.pos_inicial[1] + 225)
+			self.lista_botoes.append(Botao(self.amb, self.screen, self.lista_imgs, self.pos_inicial, texto, self.local_font + "FreeSerif.ttf", self.lista_cores))
+			self.pos_inicial = (self.pos_inicial[0] + 320, self.pos_inicial[1])
 
 	# def para definir ações de cada opção do menu ao ser selecionada
 	def selecionar_opcao(self, campo):
-		if self.comando == "Jogar":
-			print("Bubs")
+		if self.comando == "Adição":
+			print("adicao")
 
-		elif self.comando == "Instruções":
-			print("Zuck")
+		elif self.comando == "Subtração":
+			print("subtracao")
 
-		elif self.comando == "Sair":
-			campo.rodando = False
+		elif self.comando == "Multiplicação":
+			print("multiplicacao")
 
 	def tratar_eventos(self, campo, clique):
 		for botao in self.lista_botoes:
